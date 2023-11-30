@@ -14,10 +14,12 @@ public:
         cout << "Consola limpia para nuevo texto" << endl;
     }
 
-
-
-
-
+    void set_text(const std::string& text) {
+      std::cout << "Ajustes" << std::endl;
+        std::cout << ColorConsole::fg_blue << ColorConsole::fg_white;
+        std::cout << text << std::endl;
+    }
+};
 
 
 ConsoleBox *consoleBox = new ConsoleBox;
