@@ -46,9 +46,9 @@ void load_script(const char* filename, bool show_script = false)
         consoleBox->new_text();
         consoleBox->set_text(script);
     }
-    catch (...)
+    catch (const std::exception &e)
     {
-        cerr << "error durante la lectura del archivo" << endl;
+        cerr << "Error durante la lectura del archivo: " << e.what() << endl;
         if(f)
             fclose(f);
     }
