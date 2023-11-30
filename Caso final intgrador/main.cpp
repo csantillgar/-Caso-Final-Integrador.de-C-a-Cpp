@@ -7,6 +7,18 @@ struct ColorConsole {
     static constexpr auto fg_blue = "\033[34m";
     static constexpr auto fg_white = "\033[47m";
 };
+class ConsoleBox {
+public:
+    ConsoleBox() = default;
+    void new_text() {
+        cout << "Consola limpia para nuevo texto" << endl;
+    }
+
+
+
+
+
+
 
 ConsoleBox *consoleBox = new ConsoleBox;
 void load_script(const char* filename, bool show_script = false)
@@ -55,4 +67,4 @@ void load_script()
     scanf("%499s", filename);
     load_script(filename, true);
 }
-}
+};
