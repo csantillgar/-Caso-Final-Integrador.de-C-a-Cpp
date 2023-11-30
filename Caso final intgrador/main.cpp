@@ -40,7 +40,7 @@ void load_script(const char* filename, bool show_script = false)
 
         if (show_script)
         {
-            cout << ColorConsole::fg_blue << ColorConsole::bg_white;
+            cout << ColorConsole::fg_blue << ColorConsole::fg_white;
             cout << script << endl;
         }
         consoleBox->new_text();
@@ -60,5 +60,18 @@ void load_script()
     printf("Archivo: ");
     scanf("%499s", filename);
     load_script(filename, true);
+    try
+    {
+        load_script(filename, true);
+    }
+    catch (const std::exception &e)
+    {
+        cerr << "Error: " << e.what() << endl;
+    }
 }
+
+int main()
+{
+    load_script();  // Solicita al usuario un archivo y muestra su contenido
+    return 0;
 };
