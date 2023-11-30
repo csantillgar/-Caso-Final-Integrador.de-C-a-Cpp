@@ -7,20 +7,12 @@ struct ColorConsole {
     static constexpr auto fg_blue = "\033[34m";
     static constexpr auto fg_white = "\033[47m";
 };
-class ConsoleBox {
-public:
-    ConsoleBox() = default;
-    void new_text() {
-        cout << "Consola limpia para nuevo texto" << endl;
-    }
 
-    void set_text(const std::string& text) {
-      std::cout << "Ajustes" << std::endl;
-        std::cout << ColorConsole::fg_blue << ColorConsole::fg_white;
-        std::cout << text << std::endl;
-    }
+struct ConsoleBox
+{
+    void new_text() {/* Implementación para limpiar o preparar la consola para un nuevo texto */}
+    void set_text(const string &text) { cout << text << endl; }
 };
-
 
 ConsoleBox *consoleBox = new ConsoleBox;
 void load_script(const char* filename, bool show_script = false)
